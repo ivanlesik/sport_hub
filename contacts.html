@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти — КАПА</title>
+  <link rel="stylesheet" href="contacts.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">КАПА</a>
+      <nav>
+        <a href="catalog.html">Каталог</a>
+        <a href="contacts.html" class="active">Контакти</a>
+        <a href="cart.html">Кошик</a>
+        <div class="count"></div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="contacts">
+    <div class="container">
+      <h1>Контакти</h1>
+      <p>Ми завжди раді вашим питанням і пропозиціям!</p>
+      
+      <div class="contact-info">
+        <p><strong>Адреса:</strong> вул. Прикладна, 123, Київ, Україна</p>
+        <p><strong>Телефон:</strong> +380 12 345 67 89</p>
+        <p><strong>Email:</strong> info@kapa.com.ua</p>
+      </div>
+
+      <h2>Зв’яжіться з нами</h2>
+      <form id="contact-form">
+        <label for="name">Ваше ім’я</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Повідомлення</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Відправити</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Дякуємо! Ваше повідомлення надіслано. ✅');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

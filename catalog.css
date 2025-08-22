@@ -1,3 +1,4 @@
+/* Загальні стилі */
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +7,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #000;
+    background-color: #000; /* темний фон */
     color: #fff;
+    line-height: 1.6;
 }
 
+/* Хедер */
 header {
     background-color: #111;
     padding: 15px 0;
@@ -17,7 +20,7 @@ header {
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 2000px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -37,10 +40,12 @@ nav a {
     transition: color 0.3s;
 }
 
-nav a:hover {
-    color: #fff;
+nav a:hover,
+nav a.active {
+    color: #ff6600;
 }
 
+/* Секція каталогу */
 .catalog {
     padding: 40px 20px;
     max-width: 1200px;
@@ -53,6 +58,7 @@ nav a:hover {
     font-size: 2em;
 }
 
+/* Сітка продуктів */
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -65,6 +71,12 @@ nav a:hover {
     border-radius: 8px;
     text-align: center;
     color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
 }
 
 .product img {
@@ -105,4 +117,77 @@ nav a:hover {
 
 .btn-buy:hover {
     background-color: #e65500;
+}
+
+/* Секція контактів */
+.contacts {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: #111;
+    border-radius: 10px;
+}
+
+.contacts h1, .contacts h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Форма контактів */
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+    font-weight: 600;
+}
+
+form input, form textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background-color: #e65500;
+}
+
+/* Адаптивність */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-top: 10px;
+    }
 }
